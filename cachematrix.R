@@ -34,15 +34,15 @@ makeCacheMatrix <- function(mat = matrix())
 cacheSolve <- function(mat, ...) 
 {
     inv <- mat$getinvers()	
-    if (!is.null(inv)) 				## is there already a inverse matrix cached?
+    if (!is.null(inv))              ## is there already a inverse matrix cached?
     {
         message("getting cached data")
         return(inv)
     }
     
     data <- mat$getmatrix()
-    inv <- solve(data, ...)		    ## compute inverse matrix
-    mat$setinvers(inv)				## set cached inverse matrix within mat
+    inv <- solve(data, ...)         ## compute inverse matrix
+    mat$setinvers(inv)              ## set cached inverse matrix within mat
     
-    inv					        	## return inverse of mat
+    inv                             ## return inverse of mat
 }
